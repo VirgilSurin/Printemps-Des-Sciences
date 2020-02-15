@@ -88,12 +88,3 @@ def appliquer_convolution(img, mat, i, j) :
     if B < 0 :
         B = 0
     return R, G, B
-
-Gx = [[-1,0,1],[-2,0,2],[-1,0,1]]
-Gy = [[-1,-2,-1],[0,0,0],[1,2,1]]
-img = umage.load('python.jpg')
-new_image = Sobel(img, Gx, Gy)
-umage.save(new_image, 'sobel_test2')
-
-
-            
