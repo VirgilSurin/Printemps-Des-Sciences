@@ -21,7 +21,12 @@ def filtre_de_Gauss():
     """
     mat = []
     return mat
-
+def multiMatrix(matList) :
+    """
+    Applique une matrice différente par couleur d'un pixel 
+    en choississant parmis une liste de matrice
+    """
+    
 """
 Idées:
 
