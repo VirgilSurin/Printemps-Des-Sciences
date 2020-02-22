@@ -1,0 +1,4 @@
+Pour l'application de multimatrix et randomMatrixGenerator dans client.py,
+quelle genre de matrice faut il générer et quelle genre d'opération faut il générer ?
+
+idée : faire une version qui multiplie R*G, G*B, R*B ?

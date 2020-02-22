@@ -1,3 +1,7 @@
+import copy
+import math
+import random
+
 def normaliser(mat):
     """
     Divise une matrice par la somme de ses termes.
@@ -21,12 +25,29 @@ def filtre_de_Gauss():
     """
     mat = []
     return mat
-def multiMatrix(matList) :
+
+def multiMatrix(img, matList) :
     """
     Applique une matrice différente par couleur d'un pixel 
     en choississant parmis une liste de matrice
     """
+    new_img = copy.deepcopy(img)
+    for i in range(len(img)) :
+        for j in range(len(img[1])) :
+            #pour chaque pixel
+            R, G, B = img[i][j]
+            randMatrix = random.choice(matList)
+            #ON FAIT QUELLE OPERATION ?
     
+
+def randomMatrixGenerator(numb) :
+    """
+    Génère numb matrice pour appliquer avec multiMatrix
+    """
+    matrixList = []
+    #QUEL TYPE DE MATRICE FAUT IL GENERER ?
+    pass
+
 """
 Idées:
 
