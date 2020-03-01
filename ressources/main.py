@@ -158,8 +158,8 @@ if __name__ == "__main__" :
         #t3 = randomListGenerator()
         path = "C:/Users/Bernadette/Desktop/Virgil/Printemps-Des-Sciences/ressources/"
         name = "test"+str(i)
-        image = umage.load(path + "shrek.png")
-        new = convolution(image, randomMat)
+        image = umage.load("musclor.jpg")
+        new = modifier_couleurs(image, randomListGenerator(), randomListGenerator(), randomListGenerator())
         umage.save(new, name)
         #print(name + " :  " + str(t1) + "  "+ str(t2) + "  "+ str(t3))
         print(name + " :  " + str(randomMat))
@@ -181,5 +181,4 @@ if __name__ == "__main__" :
         convolution :
 
         """
-
 
