@@ -114,6 +114,10 @@ def Sobel(img, Gx, Gy) :
 
     return new_image
 
+def GaussianBlur(image) :
+    for i in range(len(image)) :
+        for j in range(len(image[i])) :
+
 def randomListGenerator() :
     """
     create a random list of 3 items, ready to be used for modifier_couleurs
@@ -146,23 +150,26 @@ def randomMatrixGenerator(basic = True) :
 
 if __name__ == "__main__" :
 
-    for i in range(10) :
+    for i in range(5) :
         convo1 = [[-2,0,0],[0,1,0],[0,0,2]]
         convo2 = [[-1,-1,-1],[-1,8,-1],[-1,-1,-1]]
         convo3 = [[-1,-1,-1],[-1,9,-1],[-1,-1,-1]]
         sobel_1A = [[-1,0,1],[-2,0,2],[-1,0,1]]
         sobel_1B = [[-1,-2,-1],[0,0,0],[1,2,1]]
         randomMat = randomMatrixGenerator()
-        #t1 = randomListGenerator()
-        #t2 = randomListGenerator()
-        #t3 = randomListGenerator()
-        path = "C:/Users/Bernadette/Desktop/Virgil/Printemps-Des-Sciences/ressources/"
+        t1 = randomListGenerator()
+        t2 = randomListGenerator()
+        t3 = randomListGenerator()
+        path = "D:/Ecole/UNIF/Printemps-Des-Sciences/ressources/"
         name = "test"+str(i)
-        image = umage.load(path + "shrek.png")
+        image = umage.load(path + "fer.jpg")
         new = convolution(image, randomMat)
-        umage.save(new, name)
+        #new = convolution(image, convo3)
+        new1 = modifier_couleurs(new, t1, t2, t3) 
+        #new1 = Sobel(image, sobel_1A, sobel_1B)
+        umage.save(new1, name)
         #print(name + " :  " + str(t1) + "  "+ str(t2) + "  "+ str(t3))
-        print(name + " :  " + str(randomMat))
+        #print(name + " :  " + str(randomMat))
         print("--------------------------------------")
 
         """
