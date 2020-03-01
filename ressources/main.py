@@ -49,9 +49,9 @@ def appliquer_convolution(img, mat, i, j) :
         for column in range(len(mat[line])) :
             pixel_value = pixel(img, i+ligne, j+colonne)
             r, g, b = pixel_value
-            R += mat[line][column] * r
-            G += mat[line][column] * g
-            B += mat[line][column] * b
+            R += int(mat[line][column] * r)
+            G += int(mat[line][column] * g)
+            B += int(mat[line][column] * b)
             colonne += 1
 
         ligne += 1
@@ -181,5 +181,5 @@ if __name__ == "__main__" :
         convolution :
 
         """
-    
+
 
