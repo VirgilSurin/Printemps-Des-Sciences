@@ -81,7 +81,7 @@ def pixel(img, i, j, default=(0,0,0)) :
 
 def modifier_couleurs(mat_img, listeR, listeV, listeB):
     """
-    Les paramètres "listeR, listeV, listeB" sont des listes de 3 int.
+    Les paramètres "listeR, listeV, listeB" sont des listes de 3 float.
     Les listes doivent être passées par la fonction normaliser auparavant.
     """
     new_img = copy.deepcopy(mat_img)
