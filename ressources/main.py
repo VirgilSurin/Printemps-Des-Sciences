@@ -124,4 +124,15 @@ def randomListGenerator() :
         newlist.append(randomInt)
     normaliser(newlist)
     return newlist
+
+
+for i in range(15) :
+    t1 = randomListGenerator()
+    t2 = randomListGenerator()
+    t3 = randomListGenerator()
+    image = umage.load("D:/Ecole/UNIF/Printemps-Des-Sciences/ressources/shrek.png")
+    new2 = modifier_couleurs(image, t1, t2, t3)
+    convo1 = [[-2,0,0],[0,1,0],[0,0,2]]
+    new3 = convolution(new2, convo1 )
+    umage.save(new3, "test"+str(i))
     
