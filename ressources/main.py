@@ -152,7 +152,7 @@ if __name__ == "__main__" :
         convo1 = [[-2,0,0],[0,1,0],[0,0,2]]
         convo2 = [[-1,-1,-1],[-1,8,-1],[-1,-1,-1]]
         convo3 = [[-1,-1,-1],[-1,9,-1],[-1,-1,-1]]
-        new3 = convolution(new2, convo1 )
+        new3 = convolution(new2, convo3 )
         umage.save(new3, "test"+str(i))
     
 
