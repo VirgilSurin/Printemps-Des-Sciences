@@ -2,22 +2,6 @@ import copy
 import math
 import random
 
-def normaliser(mat):
-    """
-    Divise une matrice par la somme de ses termes.
-    Le but est d'avoir un somme des valeurs égale à 1 et par conséquent,
-    les valeurs de chaque pixel reste entre 0 et 255.
-    """
-    total = 0
-    for line in range(len(mat)):
-        for column in range(len(mat[0])):
-            total += mat[line][column]
-    
-    for line in range(len(mat)):
-        for column in range(len(mat[0])):
-            mat[line][column] /= total
-    return mat
-
 def filtre_de_Gauss():
     """
     Pas encore implémenté
