@@ -116,6 +116,8 @@ def Sobel(img, Gx, Gy) :
 
 def Canny(image) : #WIP
     img = copy.deepcopy(image)
+    #gaussian blur
+    
     #Sobel time !
     gradientList = []
     Gx = [[-1,0,1],[-2,0,2],[-1,0,1]]
