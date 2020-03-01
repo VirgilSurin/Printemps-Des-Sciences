@@ -114,9 +114,29 @@ def Sobel(img, Gx, Gy) :
 
     return new_image
 
-def GaussianBlur(image) :
-    for i in range(len(image)) :
-        for j in range(len(image[i])) :
+def Canny(image) : #WIP
+    img = copy.deepcopy(image)
+    #Sobel time !
+    gradientList = []
+    Gx = [[-1,0,1],[-2,0,2],[-1,0,1]]
+    Gy = [[-1,-2,-1],[0,0,0],[1,2,1]]
+    for i in range(len(img)) :
+        gradientList.append([])
+        for j in range(len(img[i])) :
+            a = appliquer_convolution(img, Gx, i, j)
+            b = appliquer_convolution(img, Gy, i, j)
+            Ra, Ga, Ba = a
+            Rb, Gb, Bb = b
+            Rg = int(math.sqrt(Ra ** 2 + Rb ** 2))
+            Gg = int(math.sqrt(Ga ** 2 + Gb ** 2))
+            Bg = int(math.sqrt(Ba ** 2 + Bb ** 2))
+            gradient = Rg, Gg, Bg
+            angle = math.atan(Gx/Gy)
+            grad_Angle = gradient, angle
+            gradientList.append(grad_Angle)
+            #now we have the gradient of each pixels and the angle
+
+
 
 def randomListGenerator() :
     """
@@ -156,18 +176,18 @@ if __name__ == "__main__" :
         convo3 = [[-1,-1,-1],[-1,9,-1],[-1,-1,-1]]
         sobel_1A = [[-1,0,1],[-2,0,2],[-1,0,1]]
         sobel_1B = [[-1,-2,-1],[0,0,0],[1,2,1]]
-        randomMat = randomMatrixGenerator()
+        randomMat = randomMatrixGenerator(False)
         t1 = randomListGenerator()
         t2 = randomListGenerator()
         t3 = randomListGenerator()
         path = "D:/Ecole/UNIF/Printemps-Des-Sciences/ressources/"
         name = "test"+str(i)
-        image = umage.load(path + "fer.jpg")
+        image = umage.load(path + "shrek.png")
         new = convolution(image, randomMat)
         #new = convolution(image, convo3)
-        new1 = modifier_couleurs(new, t1, t2, t3) 
+        #new1 = modifier_couleurs(new, t1, t2, t3) 
         #new1 = Sobel(image, sobel_1A, sobel_1B)
-        umage.save(new1, name)
+        umage.save(new, name)
         #print(name + " :  " + str(t1) + "  "+ str(t2) + "  "+ str(t3))
         #print(name + " :  " + str(randomMat))
         print("--------------------------------------")
