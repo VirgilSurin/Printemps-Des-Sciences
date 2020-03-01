@@ -20,7 +20,7 @@ def normaliser(mat):
         else:
             for column in range(len(mat[0])):
                 total += mat[line][column]
-    
+
     for line in range(len(mat)):
         if type(mat[0]) != list:
             mat[line] /= total
@@ -124,4 +124,19 @@ def randomListGenerator() :
         newlist.append(randomInt)
     normaliser(newlist)
     return newlist
-    
+
+def randomMatrixGenerator() :
+    """
+    Génère matrice pour appliquer avec multiMatrix
+    """
+    n = random.randint(1, 10) * 2 + 1
+    mat = []
+    for i in range(n):
+        mat.append([])
+        for j in range(n):
+            mat[i].append([])
+    for i in range(n):
+        for j in range(n):
+            mat[i][j] = random.randint(1, 100)
+    normaliser(mat)
+    return mat
