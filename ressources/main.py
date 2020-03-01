@@ -125,11 +125,14 @@ def randomListGenerator() :
     normaliser(newlist)
     return newlist
 
-def randomMatrixGenerator() :
+def randomMatrixGenerator(basic = True) :
     """
     Génère matrice pour appliquer avec multiMatrix
     """
-    n = random.randint(1, 10) * 2 + 1
+    if basic:
+        n = 3
+    else:
+        n = random.randint(1, 10) * 2 + 1
     mat = []
     for i in range(n):
         mat.append([])
