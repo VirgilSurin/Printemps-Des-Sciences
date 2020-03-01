@@ -143,22 +143,25 @@ def randomMatrixGenerator() :
 
 if __name__ == "__main__" :
 
-    for i in range(2) :
+    for i in range(5) :
         convo1 = [[-2,0,0],[0,1,0],[0,0,2]]
         convo2 = [[-1,-1,-1],[-1,8,-1],[-1,-1,-1]]
         convo3 = [[-1,-1,-1],[-1,9,-1],[-1,-1,-1]]
         sobel_1A = [[-1,0,1],[-2,0,2],[-1,0,1]]
         sobel_1B = [[-1,-2,-1],[0,0,0],[1,2,1]]
+        randomSobel_A = randomMatrixGenerator()
+        randomSobel_B = randomMatrixGenerator()
         #t1 = randomListGenerator()
         #t2 = randomListGenerator()
         #t3 = randomListGenerator()
         path = "C:/Users/Bernadette/Desktop/Virgil/Printemps-Des-Sciences/ressources/"
         name = "test"+str(i)
         image = umage.load(path + "shrek.png")
-        new = Sobel(image, sobel_1A, sobel_1B)
+        new = Sobel(image, randomSobel_A, randomSobel_B)
         umage.save(new, name)
         #print(name + " :  " + str(t1) + "  "+ str(t2) + "  "+ str(t3))
-        #print("--------------------------------------")
+        print(name + " :  " + str(randomSobel_A) + "  " + str(randomSobel_B))
+        print("--------------------------------------")
 
         """
         modifier_couleurs :
