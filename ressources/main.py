@@ -3,6 +3,7 @@ import sys
 from docopt import docopt
 import copy
 import math
+import random
 
 def normaliser(mat):
     """
@@ -112,3 +113,15 @@ def Sobel(img, Gx, Gy) :
             new_image[i][j] = gradient
 
     return new_image
+
+def randomListGenerator() :
+    """
+    create a random list of 3 items, ready to be used for modifier_couleurs
+    """
+    newlist = []
+    for i in range(3) :
+        randomInt = random.randint(1,100)
+        newlist.append(randomInt)
+    normaliser(newlist)
+    return newlist
+    
