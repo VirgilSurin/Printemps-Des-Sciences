@@ -20,7 +20,7 @@ def normaliser(mat):
         else:
             for column in range(len(mat[0])):
                 total += mat[line][column]
-    
+
     for line in range(len(mat)):
         if type(mat[0]) != list:
             mat[line] /= total
@@ -125,14 +125,34 @@ def randomListGenerator() :
     normaliser(newlist)
     return newlist
 
+def randomMatrixGenerator() :
+    """
+    Génère matrice pour appliquer avec multiMatrix
+    """
+    n = random.randint(1, 10) * 2 + 1
+    mat = []
+    for i in range(n):
+        mat.append([])
+        for j in range(n):
+            mat[i].append([])
+    for i in range(n):
+        for j in range(n):
+            mat[i][j] = random.randint(1, 100)
+    normaliser(mat)
+    return mat
 
-for i in range(15) :
-    t1 = randomListGenerator()
-    t2 = randomListGenerator()
-    t3 = randomListGenerator()
-    image = umage.load("D:/Ecole/UNIF/Printemps-Des-Sciences/ressources/shrek.png")
-    new2 = modifier_couleurs(image, t1, t2, t3)
-    convo1 = [[-2,0,0],[0,1,0],[0,0,2]]
-    new3 = convolution(new2, convo1 )
-    umage.save(new3, "test"+str(i))
+if __name__ == "__main__" :
+
+    for i in range(15) :
+        t1 = randomListGenerator()
+        t2 = randomListGenerator()
+        t3 = randomListGenerator()
+        image = umage.load("D:/Ecole/UNIF/Printemps-Des-Sciences/ressources/shrek.png")
+        new2 = modifier_couleurs(image, t1, t2, t3)
+        convo1 = [[-2,0,0],[0,1,0],[0,0,2]]
+        convo2 = [[-1,-1,-1],[-1,8,-1],[-1,-1,-1]]
+        convo3 = [[-1,-1,-1],[-1,9,-1],[-1,-1,-1]]
+        new3 = convolution(new2, convo1 )
+        umage.save(new3, "test"+str(i))
     
+
