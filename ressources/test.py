@@ -1,4 +1,4 @@
-from main import *
+from science import *
 import umage
 import sys
 from docopt import docopt
@@ -18,7 +18,7 @@ for i in range(5) :
     t3 = randomListGenerator()
     path = "D:/Ecole/UNIF/Printemps-Des-Sciences/ressources/"
     name = "test"+str(i)
-    image = umage.load(path + "shrek.png")
+    image = umage.load("shrek.png")
     new = convolution(image, randomMat)
     #new = convolution(image, convo3)
     #new1 = modifier_couleurs(new, t1, t2, t3)

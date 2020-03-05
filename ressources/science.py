@@ -4,12 +4,7 @@ from docopt import docopt
 import copy
 import math
 import random
-
-flou_de_Gauss = normaliser([[1, 4, 6, 4, 1],
-                            [4, 16, 24, 16, 4],
-                            [6, 24, 36, 24, 6],
-                            [4, 16, 24, 16, 4],
-                            [1, 4, 6, 4, 1]])
+import client
 
 def normaliser(mat):
     """
@@ -34,6 +29,12 @@ def normaliser(mat):
             for column in range(len(mat[0])):
                 mat[line][column] /= total
     return mat
+
+flou_de_Gauss = normaliser([[1, 4, 6, 4, 1],
+                            [4, 16, 24, 16, 4],
+                            [6, 24, 36, 24, 6],
+                            [4, 16, 24, 16, 4],
+                            [1, 4, 6, 4, 1]])
 
 def convolution(mat_img, mat) :
     new_img = copy.deepcopy(mat_img)
@@ -161,7 +162,7 @@ def randomMatrixGenerator(basic = True) :
     if basic:
         n = 3
     else:
-        n = random.randint(1, 10) * 2 + 1
+        n = random.randint(1, 5) * 2 + 1
     mat = []
     for i in range(n):
         mat.append([])
@@ -174,4 +175,4 @@ def randomMatrixGenerator(basic = True) :
     return mat
 
 if __name__ == "__main__" :
-    pass
+    client.client(sys.argv)
