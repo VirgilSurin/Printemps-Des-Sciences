@@ -74,4 +74,7 @@ def client(args):
             print("Traitement des images terminé.")
             return
     if args[1] == "-s":
-        return #Pas encore implémenté, servira à lancer Sobel
+        umage.save(Sobel(mat_img, sobel_1A, sobel_1B), "new1")
+        print("Image \"new1.jpg\" enregistrée.")
+        print("Traitement des images terminé.")
+        return
